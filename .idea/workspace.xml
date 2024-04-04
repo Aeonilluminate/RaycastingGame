@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4517feb-e56d-4f12-8c66-5567bf1329e0" name="Changes" comment="Started following Pygame tutorial on YT. Hope to explore more in the coming days">
-      <change afterPath="$PROJECT_DIR$/object_renderer.py" afterDir="false" />
+    <list default="true" id="d4517feb-e56d-4f12-8c66-5567bf1329e0" name="Changes" comment="Continued development following tutorial. Would like to explore the creation of png images to store as textures.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/object_render.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/raycasting.py" beforeDir="false" afterPath="$PROJECT_DIR$/raycasting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/map.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +69,20 @@
       <option name="project" value="LOCAL" />
       <updated>1706688762858</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Continued development following tutorial. Would like to explore the creation of png images to store as textures.">
+      <option name="closed" value="true" />
+      <created>1706765627676</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706765627676</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started following Pygame tutorial on YT. Hope to explore more in the coming days" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started following Pygame tutorial on YT. Hope to explore more in the coming days" />
+    <MESSAGE value="Continued development following tutorial. Would like to explore the creation of png images to store as textures." />
+    <option name="LAST_COMMIT_MESSAGE" value="Continued development following tutorial. Would like to explore the creation of png images to store as textures." />
   </component>
 </project>
