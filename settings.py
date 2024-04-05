@@ -1,4 +1,10 @@
 import math
+from enum import Enum
+
+class GameState(Enum):
+    MAIN_MENU = 1
+    GAMEPLAY = 2
+    PAUSED = 3
 
 # game settings
 RES = WIDTH, HEIGHT = 1600, 900
