@@ -57,7 +57,6 @@ class Player:
         pg.draw.circle(self.game.screen, 'green', (self.x * 100, self.y * 100), 15)
 
     def update(self):
-        print("updating movement")
         self.movement()
 
     @property

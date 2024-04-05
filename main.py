@@ -1,7 +1,7 @@
 import pygame as pg
 import sys
 from settings import *
-from menu import *
+from menus import *
 from map import *
 from player import *
 from raycasting import *
@@ -17,7 +17,8 @@ class Game:
         self.game_state = GameState.MAIN_MENU
 
     def new_game(self):
-        self.menu = Menu(self)
+        self.menu = Main_Menu(self)
+        self.paused = Pause_Menu(self)
         self.map = Map(self)
         self.player = Player(self)
         self.object_renderer = ObjectRenderer(self)
@@ -26,30 +27,28 @@ class Game:
     def update(self, state, events=None):
         match state:
             case GameState.MAIN_MENU:
-                print("UPDATING MENU")
                 self.menu.update(events)
                 pg.display.flip()
             case GameState.GAMEPLAY:
-                print("UPDATING GAMEPLAY")
                 self.player.update()
                 self.raycasting.update()
                 pg.display.flip()
                 self.delta_time = self.clock.tick(FPS)
                 pg.display.set_caption(f'{self.clock.get_fps() :.1f}')
-            case 3:
-                pass
+            case GameState.PAUSED:
+                self.paused.update(events)
+                pg.display.flip()
 
     def draw(self, state):
         match state:
             case GameState.MAIN_MENU:
-                print("DRAWING MAIN MENU")
                 self.menu.draw()
             case GameState.GAMEPLAY:
-                print("DRAWING GAMEPLAY")
                 self.screen.fill('black')
                 self.object_renderer.draw()
-            case 3:
-                pass
+            case GameState.PAUSED:
+                self.paused.draw()
+
             # self.map.draw()
             # self.player.draw()
 
@@ -59,6 +58,10 @@ class Game:
             if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
                 pg.quit()
                 sys.exit()
+            if self.game_state is not GameState.MAIN_MENU and event.type == pg.KEYDOWN and event.key == pg.K_p:
+                pg.event.clear() # Clears event queue so as to prevent the game from immediately unpausing by processing another input of the key "p"
+                events = pg.event.get()
+                self.game_state = GameState.PAUSED
         # Pass the events to the current state for further processing
         return events
 
