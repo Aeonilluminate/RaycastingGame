@@ -19,7 +19,7 @@ class Game:
     def new_game(self):
         self.menu = Main_Menu(self)
         self.paused = Pause_Menu(self)
-        self.map = Map(self)
+        self.map = Map(self, "D:\\Dev\\PyCharm\\RaycastingGame\\assets\\maps\\level1.json")
         self.player = Player(self)
         self.object_renderer = ObjectRenderer(self)
         self.raycasting = RayCasting(self)
