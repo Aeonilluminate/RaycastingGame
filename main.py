@@ -1,6 +1,7 @@
 import pygame as pg
 import sys
 from settings import *
+from gameplay import *
 from menus import *
 from map import *
 from player import *
@@ -18,23 +19,26 @@ class Game:
 
     def new_game(self):
         self.menu = Main_Menu(self)
+        self.gameplay = Playing(self)
         self.paused = Pause_Menu(self)
-        self.map = Map(self, "D:\\Dev\\PyCharm\\RaycastingGame\\assets\\maps\\level1.json")
+        self.map = Map(self)
         self.player = Player(self)
         self.object_renderer = ObjectRenderer(self)
         self.raycasting = RayCasting(self)
 
-    def update(self, state, events=None):
+    def update(self, state, events=None, keys=None):
         match state:
+
             case GameState.MAIN_MENU:
                 self.menu.update(events)
                 pg.display.flip()
+
             case GameState.GAMEPLAY:
-                self.player.update()
-                self.raycasting.update()
+                self.gameplay.update(keys)
                 pg.display.flip()
                 self.delta_time = self.clock.tick(FPS)
                 pg.display.set_caption(f'{self.clock.get_fps() :.1f}')
+            
             case GameState.PAUSED:
                 self.paused.update(events)
                 pg.display.flip()
@@ -54,6 +58,7 @@ class Game:
 
     def check_events(self):
         events = pg.event.get()
+        keys = pg.key.get_pressed()
         for event in events:
             if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
                 pg.quit()
@@ -63,12 +68,12 @@ class Game:
                 events = pg.event.get()
                 self.game_state = GameState.PAUSED
         # Pass the events to the current state for further processing
-        return events
+        return events, keys
 
     def run(self):
         while True:
-            events = self.check_events()
-            self.update(self.game_state, events)
+            events, keys = self.check_events()
+            self.update(self.game_state, events, keys)
             self.draw(self.game_state) 
                     
 

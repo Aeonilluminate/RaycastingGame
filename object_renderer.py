@@ -6,6 +6,9 @@ class ObjectRenderer:
     def __init__(self, game):
         self.game = game
         self.screen = game.screen
+        self.wall_textures = None
+
+    def update(self):
         self.wall_textures = self.load_wall_textures()
 
     def draw(self):
@@ -22,10 +25,5 @@ class ObjectRenderer:
         return pg.transform.scale(texture, res)
 
     def load_wall_textures(self):
-        return {
-            1: self.get_texture('assets/textures/plant_wall1.png'),
-            2: self.get_texture('assets/textures/Rowan_Raya_Lucaria.png'),
-            3: self.get_texture('assets/textures/Elias_Goldhorn.png'),
-            4: self.get_texture('assets/textures/Victoria_Edwards.png'),
-            5: self.get_texture('assets/textures/Neo.png')
-        }
+        return {key:self.get_texture(value) 
+                for (key,value) in self.game.map.texture_data.items()}

@@ -31,6 +31,9 @@ class Main_Menu:
 
     def select_option(self):
         if self.current_option == 0:  # New Game
+            self.game.map.load_map("D:\\Dev\\PyCharm\\RaycastingGame\\assets\\maps\\level1.json")
+            self.game.object_renderer.update()
+            self.game.raycasting.textures = self.game.object_renderer.wall_textures
             self.game.game_state = GameState.GAMEPLAY
         elif self.current_option == 1:  # Load Game
             pass  # Implement loading functionality
