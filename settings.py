@@ -1,10 +1,17 @@
 import math
 from enum import Enum
+import os
 
 class GameState(Enum):
     MAIN_MENU = 1
     GAMEPLAY = 2
     PAUSED = 3
+
+# file paths
+GAME_DIRECTORY = os.getcwd()
+
+# database names
+TEST_REALM = "testrealm"
 
 # game settings
 RES = WIDTH, HEIGHT = 1600, 900
@@ -22,7 +29,7 @@ HALF_FOV = FOV / 2
 NUM_RAYS = WIDTH // 2
 HALF_NUM_RAYS = NUM_RAYS // 2
 DELTA_ANGLE = FOV / NUM_RAYS
-MAX_DEPTH = 20
+MAX_DEPTH = 50
 
 SCREEN_DIST = HALF_WIDTH / math.tan(HALF_FOV)
 SCALE = WIDTH // NUM_RAYS

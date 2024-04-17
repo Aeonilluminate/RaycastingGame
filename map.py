@@ -20,7 +20,7 @@ class Map:
                 if value:
                     self.world_map[(i, j)] = value
         
-        self.texture_data = {int(key):self.asset_path + "\\textures\\" + value 
+        self.texture_data = {int(key):self.asset_path + value 
                              for (key,value) in self.map_data["legend"].items()}
         print(f'Texture Data: {self.texture_data}') 
 
