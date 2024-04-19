@@ -1,8 +1,8 @@
 {
     "mysql": {
-        "host": "hostname",
-        "user": "username",
-        "passwd": "password",
-        "database": "databasename"
+        "host": "REQUEST_INPUT: {INPUT HOST: }",
+        "user": "REQUEST_INPUT: {INPUT USER: }",
+        "passwd": "REQUEST_INPUT: {INPUT PASSWD: }",
+        "database": "REQUEST_INPUT: {INPUT DB NAME: }"
     }
 }

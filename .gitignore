@@ -1,5 +1,8 @@
-textures
+__pycache__/
+.idea/
+local_textures/
+local_music/
 config.json
-Testing
+testing.ipynb
 SQL.ipynb
 music
