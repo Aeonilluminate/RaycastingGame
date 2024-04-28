@@ -3,6 +3,11 @@ from settings import *
 from map import *
 
 class ObjectRenderer:
+    @staticmethod
+    def get_texture(path, res=(TEXTURE_SIZE, TEXTURE_SIZE)):
+        texture = pg.image.load(path).convert_alpha()
+        return pg.transform.scale(texture, res)
+    
     def __init__(self, game):
         self.game = game
         self.screen = game.screen
@@ -19,11 +24,7 @@ class ObjectRenderer:
         for depth, image, pos in list_objects:
             self.screen.blit(image, pos)
 
-    @staticmethod
-    def get_texture(path, res=(TEXTURE_SIZE, TEXTURE_SIZE)):
-        texture = pg.image.load(path).convert_alpha()
-        return pg.transform.scale(texture, res)
-
     def load_wall_textures(self):
         return {key:self.get_texture(value) 
                 for (key,value) in self.game.map.texture_data.items()}
+       

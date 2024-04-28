@@ -9,6 +9,14 @@ class Player:
         self.x, self.y = PLAYER_POS
         self.angle = PLAYER_ANGLE
 
+    @property
+    def pos(self):
+        return self.x, self.y
+
+    @property
+    def map_pos(self):
+        return int(self.x), int(self.y)
+
     def movement(self, keys):
         sin_a = math.sin(self.angle)
         cos_a = math.cos(self.angle)
@@ -57,11 +65,3 @@ class Player:
 
     def update(self, keys):
         self.movement(keys)
-
-    @property
-    def pos(self):
-        return self.x, self.y
-
-    @property
-    def map_pos(self):
-        return int(self.x), int(self.y)
