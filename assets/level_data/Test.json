@@ -2,8 +2,7 @@
     "name": "Test",
     "metadata": {
       "difficulty": "Easy",
-      "author": "Nathan Acosta",
-      "asset_path": "D:\\Dev\\PyCharm\\RaycastingGame\\assets"
+      "author": "Nathan Acosta"
     },
     "map": [
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -43,10 +42,10 @@
     ],
     "legend": {
       "1": "plant_wall1.png",
-      "2": "Rowan_Raya_Lucaria.png",
-      "3": "Elias_Goldhorn.png",
-      "4": "Victoria_Edwards.png",
-      "5": "Neo.png"
+      "2": "local_textures\\Rowan_Raya_Lucaria.png",
+      "3": "local_textures\\Elias_Goldhorn.png",
+      "4": "local_textures\\Victoria_Edwards.png",
+      "5": "local_textures\\Neo.png"
     }
   }
   

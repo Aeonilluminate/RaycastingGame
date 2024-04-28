@@ -9,6 +9,8 @@ class GameState(Enum):
 
 # file paths
 GAME_DIRECTORY = os.getcwd()
+ASSETS_DIRECTORY = os.path.join(GAME_DIRECTORY, "assets")
+TEXTURES_DIRECTORY = os.path.join(ASSETS_DIRECTORY, "textures")
 
 # database names
 TEST_REALM = "testrealm"
